@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dq6ikv74tyovw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxq7w"]
+albedo_color = Color(1, 0.003921569, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rcta5"]
+material = SubResource("StandardMaterial3D_uxq7w")
+
+[node name="Outline" type="Node3D" unique_id=739232412]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1277536755]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=397784276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1962003687]
+mesh = SubResource("CapsuleMesh_rcta5")
