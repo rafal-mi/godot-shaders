@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk2t32gth6y3u"]
+
+[ext_resource type="PackedScene" uid="uid://c2w3l52mb8kcv" path="res://models/asteroid.glb" id="1_21hll"]
+[ext_resource type="Script" uid="uid://bm1iqls1ownnl" path="res://scripts/asteroid.gd" id="2_3rjhl"]
+[ext_resource type="Material" uid="uid://vxerldvxle1a" path="res://materials/asteroid.tres" id="3_1ewek"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1ewek"]
+radius = 2.0
+
+[node name="asteroida" instance=ExtResource("1_21hll")]
+script = ExtResource("2_3rjhl")
+
+[node name="rock" parent="." index="0"]
+surface_material_override/0 = ExtResource("3_1ewek")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("SphereShape3D_1ewek")
+
+[connection signal="mouse_entered" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_exited"]
