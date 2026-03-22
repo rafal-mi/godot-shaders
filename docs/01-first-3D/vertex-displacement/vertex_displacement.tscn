@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bydn8j7i33sct"]
+
+[ext_resource type="Shader" uid="uid://d0q0rlyseoasb" path="res://plane.gdshader" id="1_e7hlt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ccorx"]
+render_priority = 0
+shader = ExtResource("1_e7hlt")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nff5t"]
+material = SubResource("ShaderMaterial_ccorx")
+subdivide_width = 32
+subdivide_depth = 32
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_nff5t")

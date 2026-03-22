@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0sifsid7j71q"]
+
+[ext_resource type="Texture2D" uid="uid://dsj2grq78ykot" path="res://ladybug-svgrepo-com.svg" id="1_ey7p5"]
+
+[node name="color_replacement" type="Node2D"]
+
+[node name="LadybugSvgrepoCom" type="Sprite2D" parent="."]
+position = Vector2(314, 308)
+scale = Vector2(0.43875, 0.43875)
+texture = ExtResource("1_ey7p5")
+
+[node name="LadybugSvgrepoCom2" type="Sprite2D" parent="."]
+position = Vector2(838, 312.99997)
+scale = Vector2(0.43875, 0.43875)
+texture = ExtResource("1_ey7p5")

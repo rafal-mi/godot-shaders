@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyh1ktdv4jlsj"]
+
+[ext_resource type="Shader" uid="uid://cssgb5yadeht2" path="res://rectangle.gdshader" id="1_m38on"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6kynl"]
+shader = ExtResource("1_m38on")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0aonf"]
+size = Vector2(256, 256)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+material = SubResource("ShaderMaterial_6kynl")
+position = Vector2(233, 217.5)
+shape = SubResource("RectangleShape2D_0aonf")
