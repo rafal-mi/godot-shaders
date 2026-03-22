@@ -40,7 +40,7 @@ _surfaces = [{
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.0210733)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
@@ -56,6 +56,17 @@ mesh = SubResource("ArrayMesh_855jy")
 shape = SubResource("CapsuleShape3D_m81vf")
 
 [node name="asteroida" parent="." instance=ExtResource("3_itxpi")]
+
+[node name="asteroida2" parent="." instance=ExtResource("3_itxpi")]
+transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 2.3864965, 0.65318465, 0.18164563)
+scale_factor = 1.32
+glow_color = Color(0.013880235, 0.69871897, 0.5942915, 1)
+glow_intensity = 3.7
+glow_power = 1.5
+
+[node name="asteroida3" parent="." instance=ExtResource("3_itxpi")]
+transform = Transform3D(0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -2.8914073, -0.5025172, 0)
+glow_color = Color(0.77570665, 0.5566859, 0.002233652, 1)
 
 [connection signal="mouse_entered" from="MeshInstance3D/StaticBody3D" to="MeshInstance3D" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="MeshInstance3D/StaticBody3D" to="MeshInstance3D" method="_on_static_body_3d_mouse_exited"]
