@@ -1,13 +1,21 @@
 shader_type spatial;
-render_mode unshaded;
+
+uniform float height_scale = 0.5;
+uniform sampler2D noise;
+uniform sampler2D normalmap;
+
+varying vec2 tex_position;
 
 void vertex() {
-	VERTEX.y += cos(VERTEX.x * 4.0) * sin(VERTEX.z * 4.0);
+	tex_position = VERTEX.xz / 2.0 + 0.5;
+ 	float height = texture(noise, tex_position).x;
+	VERTEX.y += height * height_scale;
 }
 
 void fragment() {
-	// Called for every pixel the material is visible on.
+	NORMAL_MAP = texture(normalmap, tex_position).xyz;
 }
+
 
 //void light() {
 //	// Called for every pixel for every light affecting the material.
