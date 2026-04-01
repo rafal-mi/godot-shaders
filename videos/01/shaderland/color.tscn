@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0sifsid7j71q"]
+[gd_scene load_steps=4 format=3 uid="uid://b0sifsid7j71q"]
 
+[ext_resource type="Shader" uid="uid://banno5l1d6bb" path="res://color_replacement.tres" id="1_5oa58"]
 [ext_resource type="Texture2D" uid="uid://dsj2grq78ykot" path="res://ladybug-svgrepo-com.svg" id="1_ey7p5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u3mv5"]
+shader = ExtResource("1_5oa58")
 
 [node name="color_replacement" type="Node2D"]
 
 [node name="LadybugSvgrepoCom" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u3mv5")
 position = Vector2(314, 308)
 scale = Vector2(0.43875, 0.43875)
 texture = ExtResource("1_ey7p5")
