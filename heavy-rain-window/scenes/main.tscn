@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c2eogtk8q4ww6"]
+
+[ext_resource type="Shader" uid="uid://dbgo26vxja2rr" path="res://shaders/main.gdshader" id="1_o5qli"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0wfyh"]
+shader = ExtResource("1_o5qli")
+
+[node name="Main" type="Node2D" unique_id=288199915]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1478740000]
+material = SubResource("ShaderMaterial_0wfyh")
+offset_right = 600.0
+offset_bottom = 600.0

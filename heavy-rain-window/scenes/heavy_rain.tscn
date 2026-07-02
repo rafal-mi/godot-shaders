@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://clauwx8ryjodi"]
+
+[ext_resource type="Shader" uid="uid://dd6ym4ek0r38i" path="res://shaders/heavy_rain.gdshader" id="1_5xtii"]
+[ext_resource type="Texture2D" uid="uid://cctmon2kajrwx" path="res://textures/rynek.jpg" id="2_go010"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5grn1"]
+shader = ExtResource("1_5xtii")
+shader_parameter/speed = 1.0
+
+[node name="HeavyRain" type="Node2D" unique_id=170033588]
+
+[node name="Rynek" type="Sprite2D" parent="." unique_id=1282759679]
+material = SubResource("ShaderMaterial_5grn1")
+texture = ExtResource("2_go010")
+centered = false
