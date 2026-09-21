@@ -12,10 +12,10 @@ void fragment() {
 		|| 1.0 - margin - stripe_rect.y < UV.y && UV.y < 1.0 - margin) {
 		COLOR = vec4(1.0, 1.0, 0.0, 1.0);
 	}
-	if(UV.x <= 0.5 
-		&& 0.5 - stripe_rect.y / 2.0 < UV.y 
+	if(UV.x <= 0.5
+		&& 0.5 - stripe_rect.y / 2.0 < UV.y
 		&& UV.y <= 0.5 + stripe_rect.y / 2.0) {
 		COLOR = vec4(1.0, 1.0, 0.0, 1.0);
-	}	
-	
+	}
+
 }

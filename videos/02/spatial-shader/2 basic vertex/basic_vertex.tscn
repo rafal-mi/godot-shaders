@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://clpr0a553dm76"]
+
+[ext_resource type="Shader" path="res://2 basic vertex/basic_vertex.gdshader" id="1_541bg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1arey"]
+render_priority = 0
+shader = ExtResource("1_541bg")
+shader_parameter/x_distance = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y27u4"]
+material = SubResource("ShaderMaterial_1arey")
+
+[node name="BasicVertex" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_y27u4")

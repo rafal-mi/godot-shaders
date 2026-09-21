@@ -1,0 +1,64 @@
+[gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://cke85etubs5qk"]
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_kj6xa"]
+default_input_values = [0, 1.0, 1, 0.0, 2, 0.0]
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_lt2cw"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_2ukvp"]
+parameter_name = "ColorParameter"
+default_value_enabled = true
+default_value = Color(1, 0.176471, 0.541176, 1)
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_howgc"]
+expanded_output_ports = [0]
+input_name = "node_position_world"
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform vec4 ColorParameter : source_color = vec4(1.000000, 0.176471, 0.541176, 1.000000);
+
+
+
+void fragment() {
+// VectorCompose:2
+	float n_in2p0 = 1.00000;
+	float n_in2p1 = 0.00000;
+	float n_in2p2 = 0.00000;
+	vec3 n_out2p0 = vec3(n_in2p0, n_in2p1, n_in2p2);
+
+
+// Input:5
+	vec3 n_out5p0 = NODE_POSITION_WORLD;
+	float n_out5p1 = n_out5p0.r;
+
+
+// FloatConstant:3
+	float n_out3p0 = 0.000000;
+
+
+// ColorParameter:4
+	vec4 n_out4p0 = ColorParameter;
+
+
+// Output:0
+	ALBEDO = n_out2p0;
+	ALPHA = n_out5p1;
+	ROUGHNESS = n_out3p0;
+	EMISSION = vec3(n_out4p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-198.639, 58.3021)
+nodes/fragment/2/node = SubResource("VisualShaderNodeVectorCompose_kj6xa")
+nodes/fragment/2/position = Vector2(80, 120)
+nodes/fragment/3/node = SubResource("VisualShaderNodeFloatConstant_lt2cw")
+nodes/fragment/3/position = Vector2(60, 460)
+nodes/fragment/4/node = SubResource("VisualShaderNodeColorParameter_2ukvp")
+nodes/fragment/4/position = Vector2(40, 560)
+nodes/fragment/5/node = SubResource("VisualShaderNodeInput_howgc")
+nodes/fragment/5/position = Vector2(-40, 300)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 3, 0, 0, 3, 4, 0, 0, 5, 5, 1, 0, 1)
